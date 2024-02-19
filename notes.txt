@@ -1,0 +1,6 @@
+Notes: 
+    
+    - Only whole matches are acceptable. No partials. 
+    - Matches/matching will not be case-sensitive.
+    - Repeated elements are allowed. 
+    - 
