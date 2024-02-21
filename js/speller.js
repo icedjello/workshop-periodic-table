@@ -18,19 +18,14 @@ function check(inputWord) {
         for (let element of elements) {
             let symbol = element.symbol.toLowerCase();
             if (symbol.length <= inputWord.length) {
-                // checking if the symbol matches the first
-                // one or two characters of the inputWord
                 if (inputWord.slice(0, symbol.length) == symbol) {
                     if (inputWord.length > symbol.length) {
-                        // check if there's any characters left after a match.
-                        let rest = check(inputWord.slice(symbol.length));
-                        if (rest.length > 0) {
-                            // the rest of the word had matching elements
-                            // return current symbol & result
-                            return [symbol, ...rest];
-                        } else {
-                            return [symbol];
+                        let res = check(inputWord.slice(symbol.length));
+                        if (res.length > 0) {
+                            return [symbol, ...res];
                         }
+                    } else {
+                        return [symbol];
                     }
                 }
             }
